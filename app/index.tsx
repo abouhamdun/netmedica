@@ -1,9 +1,19 @@
-import React from 'react'
-import { Text, View } from 'react-native'
-export default function welcomeScreen() {
+import { ThemedView } from '@/components/ThemedView'
+import { Link } from 'expo-router'
+import { StyleSheet, Text } from 'react-native'
+
+export default function welcome() {
   return (
-    <View className='text-2xl'>
-      <Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, fuga doloribus praesentium, cumque enim accusantium temporibus eos possimus incidunt nihil nulla, animi quo totam adipisci dignissimos mollitia. Non, modi vel!</Text>
-    </View>
+    <ThemedView>
+      <Text style={styles.text}>Home</Text>
+      <Link style={{textAlign:'center',fontSize:30}} href='/login'>Login</Link>
+    </ThemedView>
   )
 }
+
+const styles = StyleSheet.create({
+    text:{
+        fontSize:50,
+        textAlign:'center'
+    }
+})
